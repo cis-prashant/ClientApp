@@ -1,0 +1,59 @@
+/* Add global styles to this file, and also import other style files */
+
+/* Importing overrides of bootstrap variables. */
+@import '/src/styles/@variables';
+@import '/src/styles/@custom';
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* Importing regular stykes for ngx-toastr */
+@import 'ngx-toastr/toastr';
+
+/* Global styles for the body of the webpage */
+body {
+	background-color: $background-colour;
+}
+
+/* Global styles for ngx-toastr toasts. This style each type of toast. */
+.toast-title {
+	background-position: 0% 50%;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	background-size: 5.5%;
+}
+
+.toast-message {
+	padding-left: 30px;
+}
+
+.toast-container .ngx-toastr {
+	padding-left: 15px !important;
+	color: black !important;
+	box-shadow: 0 0 4px #999999 !important;
+	background-color: white;
+}
+
+.toast-container .ngx-toastr:hover {
+	box-shadow: 0 0 6px #999999 !important;
+}
+
+// Success toast
+.toast-success .toast-title {
+	background-image: url('./assets/images/bootstrap-icons/check-circle-fill.svg');
+}
+
+// Error toast
+.toast-error .toast-title {
+	background-image: url('./assets/images/bootstrap-icons/x-circle-fill.svg');
+}
+
+// Warning toast
+.toast-warning .toast-title {
+	background-image: url('./assets/images/bootstrap-icons/exclamation-triangle-fill.svg');
+}
+
+// Info toast
+.toast-info .toast-title {
+	background-image: url('./assets/images/bootstrap-icons/info-circle-fill.svg');
+}

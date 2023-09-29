@@ -1,0 +1,20 @@
+<app-load-spinner [fullScreen]="true"></app-load-spinner>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 mx-auto">
+			<div class="card border-0 shadow rounded-3 my-5">
+				<div class="card-body p-4 p-sm-5 d-flex flex-column align-items-center justify-content-cente">
+					<h5 class="text-center mb-5">Sign In</h5>
+					<app-input-text [inputs]="inputItems" (valueChange)="this.onInputValueChange($event)"></app-input-text>
+					<div class="d-grid">
+						<app-input-button
+							[value]="'LOGIN.BUTTON.LABEL' | translate"
+							(clickEvent)="this.submitCredentials()"
+							[alt]="'LOGIN.BUTTON.LABEL' | translate"
+						></app-input-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

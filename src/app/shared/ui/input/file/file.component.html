@@ -1,0 +1,16 @@
+<div class="">
+	<div class="row">
+		<div class="col-3">
+			<input type="file" [accept]="this.requiredFileType" (change)="this.onFileSelected($event)" />
+		</div>
+
+		<div class="col-4">
+			<app-input-button
+				[alt]="'LOGIN.BUTTON.LABEL' | translate"
+				[value]="'LOGIN.BUTTON.LABEL' | translate"
+				[disabled]="!selectedFile"
+				(clickEvent)="this.uploadFile()"
+			></app-input-button>
+		</div>
+	</div>
+</div>

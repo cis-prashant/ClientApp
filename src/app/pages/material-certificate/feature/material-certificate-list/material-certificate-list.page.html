@@ -1,0 +1,15 @@
+<a>Material Certificate List</a>
+
+<div class="d-grid">
+	<app-input-button
+		value="navigate to MaterialCertificateDetails"
+		(clickEvent)="this.navigateToMaterialCertificateDetails()"
+		>>
+	</app-input-button>
+</div>
+
+<div class="d-grid">
+	<app-input-button value="navigateToDashboard" (clickEvent)="this.naviagetToDashboard()">> </app-input-button>
+</div>
+
+<app-input-file (uploadFileEvent)="this.createDocument($event)"></app-input-file>

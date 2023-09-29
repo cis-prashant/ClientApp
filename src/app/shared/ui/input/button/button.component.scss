@@ -1,0 +1,27 @@
+@import '/src/styles/@variables';
+
+.btn-custom {
+	margin: 5px 5px 5px 0px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: normal;
+	height: 30px;
+	min-width: 80px;
+}
+
+.btn-custom:hover {
+	background-color: #f0f0f0;
+}
+
+.btn-custom:focus {
+	outline: auto;
+}

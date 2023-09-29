@@ -1,0 +1,10 @@
+<div class="form-control-sec" [hidden]="hidden">
+    <label class="formLabel tooltiphead" for="">
+        <span class="labelContent "><span class="text-danger" *ngIf="required">*</span>{{label}}</span>
+    </label>
+    <app-popover [title]="popoverTitle" [description]="popoverDescription"></app-popover>
+    <select class="formInput" [id]="id" [(ngModel)]="selectedValue" [ngClass]="{'disable': disabled}">
+        <option value=""></option>
+        <option *ngFor="let value of values" [value]="value">{{ value }}</option>
+    </select>
+</div>

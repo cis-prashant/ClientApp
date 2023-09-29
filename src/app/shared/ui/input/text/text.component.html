@@ -1,0 +1,14 @@
+<div class="input-container">
+	<div *ngFor="let input of inputs; let i = index" class="input-item">
+		<span class="input-label">{{ input.label }}:</span>
+		<div class="input-field">
+			<input
+				id="{{ id }}"
+				type="{{ input.type }}"
+				[(ngModel)]="input.value"
+				class="input-element"
+				(ngModelChange)="this.onInputChange($event, i)"
+			/>
+		</div>
+	</div>
+</div>
