@@ -3,7 +3,7 @@
         <span class="labelContent "><span class="text-danger" *ngIf="required">*</span>{{label}}</span>
     </label>
     <app-popover [title]="popoverTitle" [description]="popoverDescription"></app-popover>
-    <select class="formInput" [id]="id" [(ngModel)]="selectedValue" [ngClass]="{'disable': disabled}">
+    <select class="formInput" [id]="id" [(ngModel)]="selectedValue" [ngClass]="{'disable': disabled}" (change)="onSelectChanged($event)">
         <option value=""></option>
         <option *ngFor="let value of values" [value]="value">{{ value }}</option>
     </select>

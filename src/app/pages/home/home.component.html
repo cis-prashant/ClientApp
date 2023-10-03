@@ -2,7 +2,7 @@
     <h3 class="accHeading">General</h3>
     <strong>General</strong>
     <div class="row">
-        <div class="col col-md-6">
+        <div class="col">
             <app-input-dropdown [disabled]="false" [required]="true" [label]="'Gender'" [values]="['Male', 'Female', 'Other']"></app-input-dropdown>
         </div>
         <div class="col-12 col-md-6">
@@ -10,9 +10,6 @@
         </div>
         <div class="col-12 col-md-6">
             <app-input-dropdown [label]="'I am Disabled'" [disabled]="true" [values]="['Yes', 'No']" [selectedValue]="'Yes'"></app-input-dropdown>
-        </div>
-        <div class="col-12 col-md-6">
-            <app-input-dropdown [label]="'Some label2'" [hidden]="true"></app-input-dropdown>
         </div>
         <div class="col-12 col-md-6">
             <app-input-dropdown [label]="'Some label2'" [hidden]="true"></app-input-dropdown>

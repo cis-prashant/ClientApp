@@ -168,8 +168,11 @@
   z-index: 1;
   padding: 5px 10px 5px 0;
 }
+.form-control-sec .formLabel .labelContent:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
 .form-control-sec .formInput {
-  max-width: 500px;
   width: 100%;
   border: 1px solid #cecece;
   padding: 5px 10px;
@@ -186,6 +189,10 @@
 }
 .form-control-sec .formInput:focus{
   border: 1px solid #80bfff;
+}
+.form-control-sec .formInput:hover{
+  border: 1px solid #80bfff;
+
 }
 /* Input Section end */
 

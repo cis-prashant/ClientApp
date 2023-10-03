@@ -17,10 +17,20 @@ export class DropdownComponent {
   @Input() public hidden: boolean = false;
   @Input() public required: boolean = false;
 
+  @Output() selectValueChange = new EventEmitter<string>();
+
   static nextId = 1;
 
   constructor() {
     if(this.id == undefined || this.id == '') this.id = 'app-dropdown-'+ DropdownComponent.nextId++;
+  }
+
+  onSelectChanged(event: any) {
+    if (event == null || event === '') {
+			return;
+		}
+    const selectedValue = event.target.value;
+		this.selectValueChange.emit(selectedValue);
   }
 
 }
