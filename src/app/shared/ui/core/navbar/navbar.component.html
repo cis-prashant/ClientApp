@@ -1,0 +1,79 @@
+<div class="navbarSection">
+    <div class="page-container">
+    <div class="navbarcontainer">
+        <div class="navLogo">
+            <a routerLink="/home">CRONUS Danmark A/S</a>
+        </div>
+        <ul class="navbarList">
+            <li *ngFor="let item of navbarItems.navbarItems" class="navList">
+                <a *ngIf="item.type == 'link'" routerLink="/{{item.route}}" alt="SSDFSFDSDFSFDF" class="navLinks">
+                    {{item.name}}
+                </a>
+                <a *ngIf="item.type == 'menu'" href="javascript:void(0)" class="navLinks">
+                    {{item.name}} <img src="assets/images/down-arrow.svg" class="downarrow" alt="">
+                </a>
+                <div class="navBarinnerSec" *ngIf="item.type == 'menu'">
+                    <div class="navinnerListSec">
+                        <ul class="navInnerList">
+                            <li *ngFor="let subItem of item.items">
+                                <a routerLink="/{{subItem.route}}" class="navLinksInner">{{subItem.name}}</a>
+                            </li>
+                        </ul>
+                    </div>  
+                </div>
+            </li>
+        </ul>        
+        <div class="settingMenuSec">
+            <div class="menuIconSec" (click)="openPopup()">
+                <img src="assets/images/menu.svg" class="menuIcon"  id="show-popup-button" alt="">
+            </div>
+            <div id="popup-container" [ngClass]="{'d-none': !isOpenPopup}">
+                <div id="popup-content">
+                    <div class="popUpMenuLists">
+                        <ng-container *ngFor="let item of navbarItems.navbarItems">
+                            <ng-container *ngIf="item.type == 'link'; else subMenuTemplate">
+                                <ul class="popUpList">
+                                    <li>
+                                        <a routerLink="/{{item.route}}" class="navLinksInner">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </ng-container>
+                            <ng-template #subMenuTemplate>
+                                <ul class="popUpList">
+                                    <li>
+                                        <p>{{item.name}} ({{item?.items?.length}}) </p>
+                                    </li> 
+                                    <li *ngFor="let sub of item.items">
+                                        <a routerLink="/{{sub.route}}" class="navLinksInner">{{sub.name}}</a>
+                                    </li>
+                                </ul>
+                            </ng-template>
+                        </ng-container>
+                    </div>
+                  <button id="close-popup" (click)="openPopup()">Close</button>
+                </div>                        
+            </div>
+            <div class="myProfileSec">
+                <button id="menuButton" class="settingImgSec" (click)="toggleAdmin()">
+                    <img src="assets/images/setting.svg"  alt="">
+                </button>
+                <ul id="menu" class="profileMenu" [ngClass]="{'hidden': !openAdmin}">
+                    <li *ngFor="let item of navbarItems.administratorModule.items">
+                        <a routerLink="/{{item.route}}">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="myProfileSec">
+                <button id="menuButton" class="settingImgSecc" (click)="toggleUser()">
+                    {{navbarItems.userToolbar.name}}
+                </button>
+                <ul id="menu" class="profileMenu" [ngClass]="{'hidden': !openUser}">
+                    <li *ngFor="let item of navbarItems.userToolbar.items">
+                        <a routerLink="/{{item.route}}">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -16,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { DropdownModule } from './shared/ui/input/dropdown/dropdown.module';
 import { PopoverModule } from './shared/ui/popover/popover.module';
 import { WrapperModule } from './shared/ui/input/wrapper/wrapper.module';
+import { NavBarComponent } from './shared/ui/core/navbar/navbar.component';
 
 
 export function HttpLoaderFactory(httpclient: HttpClient) {
@@ -23,7 +24,7 @@ export function HttpLoaderFactory(httpclient: HttpClient) {
 }
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent],
+	declarations: [AppComponent, HomeComponent, NavBarComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
