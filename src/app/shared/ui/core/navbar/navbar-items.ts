@@ -605,7 +605,7 @@ export default {
       },
     userToolbar: 
       {
-        name: "NAME_OF_THE_USER",
+        name: "Prashant P",
         tooltip: "View settings",
         type: "dropdown",
         requiredPermissions: ["READ_USER"],
@@ -618,7 +618,6 @@ export default {
             requiredPermissions: ["EDIT_USER"],
           },
         ],
-      },
-    
+      }
   };
   

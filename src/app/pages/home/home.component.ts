@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import navbarItems from 'src/app/shared/ui/core/navbar/navbar-items';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-
+  navbarItems = navbarItems;
 }

@@ -1,23 +1,28 @@
-import { Component } from '@angular/core';
-import navbarItems from './navbar-items';
+import { Component, HostListener, ElementRef, ViewChild, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-navbar',
 	templateUrl: './navbar.component.html',
 	styleUrls: ['./navbar.component.scss']
 })
+
 export class NavBarComponent {
 
-	constructor() {
+	@ViewChild('menuButtonAdmin')
+	menuButton1!: ElementRef;
+    @ViewChild('menuButtonUser')
+	menuButton2!: ElementRef;
 
-	}
+	@Input() public title: string = '';
+	@Input() public data!: Object;
 
-	navbarItems = navbarItems;
+	navbarItems : any;
 	isOpenPopup = false;
 	openUser = false;
 	openAdmin = false;
 
 	ngOnInit() {
+		this.navbarItems = this.data;
 	}
 
 	openPopup() {
@@ -30,5 +35,16 @@ export class NavBarComponent {
 
 	toggleAdmin() {
 		this.openAdmin = !this.openAdmin;
+	}
+
+	@HostListener('document:click', ['$event'])
+	onClick(event: Event) {
+		if (this.openUser && !this.menuButton2.nativeElement.contains(event.target as Node)) {
+		this.openUser = false;
+		
+		}
+		if (this.openAdmin && !this.menuButton1.nativeElement.contains(event.target as Node)) {
+		this.openAdmin = false;
+		}
 	}
 } 

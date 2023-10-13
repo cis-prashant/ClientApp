@@ -1,226 +1,324 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .navbarcontainer{
-    display: flex;
-    align-items: center;
-    padding: 15px 0px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 15px 0px;
+  justify-content: space-between;
 }
 .navbarList{
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 15px;
-    margin: 0 20px;
-    padding: 0 20px;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0px;
+  padding: 0 20px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
 }
 .menuIconSec .menuIcon{
-    width:20px;
-    cursor: pointer;
+  width:20px;
+  cursor: pointer;
 }
 .downarrow{
-    width: 15px;
+  width: 15px;
 }
 .navbarList li .navLinks{
-    font-size: 15px;
-    padding: 15px 15px;
-    color: #000;
-    text-decoration: none;
-    /* position: relative; */
+  font-size: 13px;
+  padding: 15px 7px;
+  color: #000;
+  text-decoration: none;
+  /* position: relative; */
 }
 .navBarinnerSec{       
-    display: none;
+  display: none;
     position: absolute;
-    background-color: #f9f9f9;   
+    background-color: #ededed;
     z-index: 1;
     padding: 15px;
     left: 0;
     right: 0;
+    z-index: 99;
 }
 .navInnerList{
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 .navBarinnerSec .navLinksInner{
-    font-size: 15px;
-    color: rgb(6, 170, 137);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 5px 15px;
+  font-size: 15px;
+  color: rgb(6, 170, 137);
+  text-decoration: none;
+  padding: 5px 15px;
+  font-weight: 400;
+  display: inline-block;
+}
+.navBarinnerSec .navLinksInner:hover{
+  font-size: 14.5px;
+  font-weight: 600;
 }
 .navList:hover .navBarinnerSec{
-    visibility: visible;
-    opacity: 1;
-    display: block;
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 .navList:hover .navBarinnerSec .navLinksInner:hover{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .navList:hover {
-  text-decoration: underline;
-  font-weight: 500;
+text-decoration: underline;
+font-weight: 500;
 }
 .navLinksInner:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
-.navinnerListSec{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+.navinnerListSec .navInnerList{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
 }
-
+.navinnerListSec .navInnerList li{
+  width: 230px;
+}
 .navLogo a{
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #000;
+font-size: 24px;
+font-weight: 600;
+text-decoration: none;
+color: #000;
 }
 
 #popup-container {
-    // display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-  }
-  
-  #popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-  }
-  
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-  }
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
 
-  .popUpMenuLists{
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
+#popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.popUpMenuLists{
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.popUpMenuLists .popUpList{
+  list-style: none;
+}
+.popUpMenuLists .popUpList li p{
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.popUpMenuLists .popUpList .navLinksInner{
+  font-size: 15px;
+  color: rgb(6, 170, 137);
+  text-decoration: none;
+  padding: 5px 15px;
+  position: relative;
+}
+.popUpMenuLists .popUpList .navLinksInner:hover{
+  text-decoration: underline;
+  font-weight: 600;
+font-size: 14.45px;
+}
+.popUpMenuLists .popUpList .navLinksInner::before{
+  content: "-";
+  position: absolute;
+  left: 0;
+  font-size: 15px;
+  color: rgb(6, 170, 137);
+}
+.myProfileSec {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 20px;
+  position: relative;
   }
-  .popUpMenuLists .popUpList{
-    list-style: none;
+  .myProfileSec p{
+      margin: 0;
   }
-  .popUpMenuLists .popUpList li p{
-    font-weight: 600;
+  .settingImgSec {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
   }
-  .popUpMenuLists .popUpList .navLinksInner{
-    font-size: 15px;
-    color: rgb(6, 170, 137);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 5px 15px;
+  .settingImgSecc{
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      font-size: 14px;
   }
-  .popUpMenuLists .popUpList .navLinksInner:hover{
-    text-decoration: underline;
-  }
-  .myProfileSec {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: 40px;
-    position: relative;
-    }
-    .myProfileSec p{
-        margin: 0;
-    }
-    .settingImgSec {
-        width: 20px;
-        height: 20px;
-        padding: 0;
-        border: 0;
-        background: #fff;
-        position: relative;
-    }
-    .settingImgSecc{
-        padding: 0;
-        border: 0;
-        background: #fff;
-        position: relative;
-        font-size: 14px;
-    }
-  .settingImgSec img{
-    width: 100%;
-    height:100%;
-  }
-  .hidden {
-    display: none;
+.settingImgSec img{
+  width: 100%;
+  height:100%;
+}
+.hidden {
+  display: none;
 }
 .profileMenu {
-    position: absolute;
-    background-color: #fff;
-    width: 125px;
-    z-index: 9999;
-    top: 30px;
-    list-style: none;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  position: absolute;
+  background-color: #fff;
+  width: 120px;
+  z-index: 9999;
+  top: 30px;
+  list-style: none;
+  padding: 10px;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .profileMenu li a{
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+
 }
 .profileMenu li a:hover{
-    text-decoration: underline;
+  text-decoration: underline;
+  font-size: 14.6px;
+  font-weight: 600;
+}
+a.navLinkInner {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
 }
 
 .settingMenuSec{
+display: flex;
+position: relative;
+align-items: center;
+}
+.menuLogosec{
   display: flex;
-  max-width: 270px;
-  position: relative;
+  gap: 20px;
+  align-items: center;
+}
+.popUpContent {
+  display: flex;
+  align-items: baseline;
+}
+.popUpContent .backButton{
+  background-color: transparent;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.popUpContent .backButton img{
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width:1600px){
+  .navLogo a{
+    font-size: 22px;
+    font-weight: 600;
+  }
 }
 @media screen and (max-width:1340px){
-  .navLogo a{
-    font-size:18px;
+.navLogo a{
+  font-size:18px;
 }
 .navbarList li .navLinks{
-  font-size: 13px;
-  padding: 15px 10px ;
+font-size: 13px;
+padding: 15px 10px ;
+}
+.navbarList{
+  gap: 0;
 }
 }
-  @media screen and (max-width:1240px){
-    .wrapper .container{
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    .navbarcontainer{
-        justify-content: space-between;
-    }
-    .navLogo a{
-        font-size:16px;
-       
-    }
-    .settingImgSecc{
-      font-size: 12px;
-    }
+@media screen and (max-width:1240px){
+  .wrapper .container{
+      max-width: 100%;
+      padding: 0 15px;
   }
-  @media screen and (max-width:1150px){
-    .navbarList{
-      display: none;
-    }
+  .navbarcontainer{
+      justify-content: space-between;
+  }
+  .navLogo a{
+      font-size:16px;
+     
+  }
+  .settingImgSecc{
+    font-size: 12px;
+  }
+  .navbarList li:nth-child(7){
+    display: none;
+  }
+  .navbarList li:nth-child(6){
+    display: none;
+  }
+  
+}
 
+@media screen and (max-width:1150px){
+  
+
+}
+.navList:hover a.navLinks {
+  font-size: 12.6px;
+}
+@media screen and (max-width:1024px){
+  .navbarList li:nth-child(5){
+    display: none;
   }
+}
+@media screen and (max-width:950px){
+  .navbarList li:nth-child(4){
+    display: none;
+  }
+}
+
+@media screen and (max-width:767px){
+  .navbarList li:nth-child(3){
+    display: none;
+  }
+}
+
+@media screen and (max-width:600px){
+  .navbarList {
+    display: none;
+  }
+}
+
+@media screen and (max-width:390px){
+  .navLogo{
+    font-size: 14px;
+  }
+}
